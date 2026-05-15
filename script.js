@@ -558,6 +558,8 @@ const state = {
   dragStartX: 0,
   dragStartY: 0,
   dragMoved: false,
+  activePointers: new Map(),
+  pinch: null,
   lastTime: 0,
   pendingRevealId: null,
   hoveredCalloutName: null,
@@ -2751,6 +2753,45 @@ function isTextEntryTarget(target) {
   );
 }
 
+function getTouchGestureSnapshot() {
+  const [first, second] = [...state.activePointers.values()];
+  if (!first || !second) return null;
+  const centerX = (first.x + second.x) / 2;
+  const centerY = (first.y + second.y) / 2;
+  return {
+    centerX,
+    centerY,
+    distance: Math.max(1, Math.hypot(first.x - second.x, first.y - second.y)),
+  };
+}
+
+function beginPinchGesture() {
+  const snapshot = getTouchGestureSnapshot();
+  if (!snapshot) return;
+  state.pinch = {
+    centerX: snapshot.centerX,
+    centerY: snapshot.centerY,
+    distance: snapshot.distance,
+    zoom: state.zoom,
+    panX: state.panX,
+    panY: state.panY,
+  };
+}
+
+function updatePinchGesture() {
+  if (!state.pinch) beginPinchGesture();
+  const snapshot = getTouchGestureSnapshot();
+  if (!snapshot || !state.pinch) return;
+  state.dragMoved = true;
+  state.zoom = clampNumber(
+    state.pinch.zoom * (snapshot.distance / state.pinch.distance),
+    0.72,
+    1.62,
+  );
+  state.panX = state.pinch.panX + snapshot.centerX - state.pinch.centerX;
+  state.panY = state.pinch.panY + snapshot.centerY - state.pinch.centerY;
+}
+
 function renderOrganelleList(cell) {
   els.organelleList.innerHTML = cell.organelles
     .map(
@@ -2959,6 +3000,25 @@ function bindControls() {
   els.exportBtn.addEventListener("click", downloadCurrentModel);
 
   els.canvas.addEventListener("pointerdown", (event) => {
+    try {
+      els.canvas.setPointerCapture(event.pointerId);
+    } catch {
+      // Some synthetic or interrupted touch streams cannot be captured.
+    }
+    if (event.pointerType === "touch") {
+      event.preventDefault();
+      state.activePointers.set(event.pointerId, {
+        x: event.clientX,
+        y: event.clientY,
+      });
+      clearHoveredCallout();
+      if (state.activePointers.size >= 2) {
+        beginPinchGesture();
+        state.drag = false;
+        state.dragMoved = true;
+        return;
+      }
+    }
     state.drag = true;
     clearHoveredCallout();
     state.dragX = event.clientX;
@@ -2966,10 +3026,20 @@ function bindControls() {
     state.dragStartX = event.clientX;
     state.dragStartY = event.clientY;
     state.dragMoved = false;
-    els.canvas.setPointerCapture(event.pointerId);
   });
 
   els.canvas.addEventListener("pointermove", (event) => {
+    if (event.pointerType === "touch" && state.activePointers.has(event.pointerId)) {
+      event.preventDefault();
+      state.activePointers.set(event.pointerId, {
+        x: event.clientX,
+        y: event.clientY,
+      });
+      if (state.activePointers.size >= 2) {
+        updatePinchGesture();
+        return;
+      }
+    }
     if (!state.drag) {
       updateCalloutHoverFromPointer(event);
       return;
@@ -2993,23 +3063,53 @@ function bindControls() {
   });
 
   els.canvas.addEventListener("pointerup", (event) => {
+    if (event.pointerType === "touch") {
+      const wasPinching = Boolean(state.pinch);
+      state.activePointers.delete(event.pointerId);
+      if (wasPinching) {
+        state.pinch = null;
+        const [remainingPointer] = state.activePointers.values();
+        if (remainingPointer) {
+          state.drag = true;
+          state.dragX = remainingPointer.x;
+          state.dragY = remainingPointer.y;
+          state.dragStartX = remainingPointer.x;
+          state.dragStartY = remainingPointer.y;
+          state.dragMoved = true;
+        } else {
+          state.drag = false;
+          state.dragMoved = false;
+        }
+        if (els.canvas.hasPointerCapture(event.pointerId)) {
+          els.canvas.releasePointerCapture(event.pointerId);
+        }
+        return;
+      }
+    }
     const totalDx = event.clientX - state.dragStartX;
     const totalDy = event.clientY - state.dragStartY;
     const wasClick = !state.dragMoved && Math.hypot(totalDx, totalDy) <= 6;
     state.drag = false;
-    els.canvas.releasePointerCapture(event.pointerId);
+    if (els.canvas.hasPointerCapture(event.pointerId)) {
+      els.canvas.releasePointerCapture(event.pointerId);
+    }
     const hitName = updateCalloutHoverFromPointer(event);
     if (wasClick && hitName) selectCalloutFeature(hitName);
     state.dragMoved = false;
   });
 
-  els.canvas.addEventListener("pointercancel", () => {
+  els.canvas.addEventListener("pointercancel", (event) => {
+    state.activePointers.delete(event.pointerId);
+    state.pinch = null;
     state.drag = false;
     state.dragMoved = false;
     clearHoveredCallout();
   });
 
-  els.canvas.addEventListener("pointerleave", clearHoveredCallout);
+  els.canvas.addEventListener("pointerleave", (event) => {
+    if (event.pointerType === "touch") return;
+    clearHoveredCallout();
+  });
 
   els.canvas.addEventListener(
     "wheel",
