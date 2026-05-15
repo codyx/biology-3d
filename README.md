@@ -4,6 +4,8 @@ Interactive biology viewer for exploring cell types and early life-origin models
 
 Live site: `https://biology-3d.vercel.app`
 
+![Biology 3D preview](assets/readme-preview.png)
+
 ## What it includes
 
 - Cell types and life-origin specimens in two separate left-rail dropdowns
