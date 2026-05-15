@@ -526,6 +526,7 @@ const originItems = [
 ];
 
 const specimens = [...cellTypes, ...originItems];
+const mobileViewportQuery = window.matchMedia("(max-width: 980px)");
 
 const state = {
   active: 0,
@@ -543,7 +544,7 @@ const state = {
     cell: true,
     origin: true,
   },
-  helpOpen: true,
+  helpOpen: !mobileViewportQuery.matches,
   settingsOpen: false,
   sound: true,
   favorites: new Set(),
@@ -3122,6 +3123,17 @@ function bindControls() {
   );
 
   window.addEventListener("resize", resizeAll);
+  const syncMobileHelpDefault = (event) => {
+    if (event.matches && state.helpOpen) {
+      state.helpOpen = false;
+      updateUI();
+    }
+  };
+  if (mobileViewportQuery.addEventListener) {
+    mobileViewportQuery.addEventListener("change", syncMobileHelpDefault);
+  } else {
+    mobileViewportQuery.addListener(syncMobileHelpDefault);
+  }
   window.addEventListener("keydown", (event) => {
     if (
       event.key === "/" &&
