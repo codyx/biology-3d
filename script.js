@@ -2875,13 +2875,15 @@ function bindControls() {
   });
 
   document.addEventListener("click", (event) => {
-    if (
+    const insideSearch =
       event.target.closest(".global-search") ||
-      event.target.closest("#navSearch")
-    ) {
-      return;
-    }
-    closeSearchSuggestions();
+      event.target.closest("#navSearch");
+    const insideSettings =
+      event.target.closest("#settingsPanel") ||
+      event.target.closest("#navSettings");
+
+    if (!insideSearch) closeSearchSuggestions();
+    if (!insideSettings) state.settingsOpen = false;
     syncTopControls();
   });
 
@@ -2905,6 +2907,11 @@ function bindControls() {
   });
 
   els.settingsPanel.addEventListener("click", (event) => {
+    if (event.target.closest("[data-settings-close]")) {
+      state.settingsOpen = false;
+      updateUI();
+      return;
+    }
     const button = event.target.closest("[data-setting]");
     if (!button) return;
     const setting = button.dataset.setting;

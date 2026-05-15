@@ -2371,6 +2371,23 @@ body {
   display: none;
 }
 
+.settings-panel-header {
+  min-height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 0 2px 3px;
+  color: #dff9ff;
+}
+
+.settings-panel-header strong {
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
 .settings-panel button {
   min-height: 36px;
   display: flex;
@@ -2383,6 +2400,42 @@ body {
   color: #d9f8ff;
   cursor: pointer;
   font-weight: 800;
+}
+
+.settings-panel .settings-close {
+  position: relative;
+  width: 28px;
+  min-height: 28px;
+  flex: 0 0 28px;
+  justify-content: center;
+  padding: 0;
+  border-color: rgba(82, 210, 246, 0.22);
+  border-radius: 7px;
+}
+
+.settings-panel .settings-close::before,
+.settings-panel .settings-close::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+.settings-panel .settings-close::before {
+  transform: rotate(45deg);
+}
+
+.settings-panel .settings-close::after {
+  transform: rotate(-45deg);
+}
+
+.settings-panel .settings-close:hover,
+.settings-panel .settings-close:focus-visible {
+  border-color: rgba(93, 229, 255, 0.72);
+  background: rgba(53, 215, 255, 0.13);
+  outline: none;
 }
 
 .settings-panel button[aria-pressed="true"] {
