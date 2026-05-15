@@ -1,0 +1,10 @@
+{
+  "specimen_id": "bacteria",
+  "specimen_name": "Bacteria Cell",
+  "group": "cell",
+  "source": "/Users/codyx/Downloads/bacterium cell 3d model.glb",
+  "installed_as": "/Users/codyx/Code/med/assets/bacteria-tripo.glb",
+  "replaced_previous_model": "/Users/codyx/Code/med/assets/bacteria-tripo.failed-tripo.glb",
+  "updated_at": "2026-05-13T14:53:56+04:00",
+  "notes": "User-provided bacterium cell GLB installed after replacing the generated Tripo bacteria model."
+}

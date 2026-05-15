@@ -1,0 +1,10 @@
+{
+  "specimen_id": "epithelial",
+  "specimen_name": "Epithelial Cell",
+  "group": "cell",
+  "source": "/Users/codyx/Downloads/epithelial.glb",
+  "installed_as": "/Users/codyx/Code/med/assets/epithelial-tripo.glb",
+  "replaced_previous_model": "/Users/codyx/Code/med/assets/epithelial-tripo.failed-tripo.glb",
+  "updated_at": "2026-05-13T14:38:00+04:00",
+  "notes": "User-provided epithelial cell GLB installed after replacing the generated Tripo model."
+}

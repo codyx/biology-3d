@@ -1,0 +1,11 @@
+{
+  "specimen_id": "protocell",
+  "specimen_name": "Protocell",
+  "group": "life-origin",
+  "group_id": "life-origin",
+  "source": "/Users/codyx/Downloads/beaded sculpture 3d model.glb",
+  "installed_as": "/Users/codyx/Code/med/assets/protocell-tripo.glb",
+  "replaced_previous_model": "/Users/codyx/Code/med/assets/protocell-tripo.failed-tripo.glb",
+  "updated_at": "2026-05-13T15:41:17+0400",
+  "notes": "User-provided beaded sculpture GLB installed for Protocell."
+}

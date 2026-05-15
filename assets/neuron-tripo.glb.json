@@ -1,0 +1,10 @@
+{
+  "specimen_id": "neuron",
+  "specimen_name": "Neuron",
+  "group": "cell",
+  "source": "/Users/codyx/Downloads/neuron model 3d.glb",
+  "installed_as": "/Users/codyx/Code/med/assets/neuron-tripo.glb",
+  "replaced_previous_model": "/Users/codyx/Code/med/assets/neuron-tripo.failed-tripo.glb",
+  "updated_at": "2026-05-13T14:04:00+04:00",
+  "notes": "User-provided neuron GLB installed after replacing the generated Tripo model."
+}

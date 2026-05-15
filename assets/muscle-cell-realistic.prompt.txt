@@ -1,0 +1,10 @@
+Use case: scientific-educational
+Asset type: hero specimen image for an interactive biology app canvas
+Primary request: Generate an ultra-realistic 3D muscle cell / muscle fiber cutaway specimen matching the same premium educational biology app style as a realistic plant-cell museum model.
+Scene/backdrop: plain warm ivory studio background (#fbf7ea), no UI, no labels, no text, no watermark, no pointer cursor, no buttons.
+Subject: a single isometric 3D muscle fiber cutaway model, viewed from slightly above at a three-quarter angle. It should look like a tactile physical resin museum model: elongated cylindrical bundle with the front cut open to reveal packed myofibrils.
+Required biological structures: red/pink elongated muscle fiber casing, cross-section at one end showing many tightly packed circular myofibril bundles, striated bands along the length, purple sarcolemma membrane layer, tan connective filaments, small nuclei at the periphery, sarcoplasm texture, subtle tubular structures. Dense layered detail with occlusion and contact shadows.
+Material and realism: hyper-detailed 3D render, clay/resin museum model realism, PBR materials, glossy tissue-resin surface, subtle pores and surface texture, bevels, ambient occlusion, soft global illumination, realistic shadows, crisp edges, high-resolution, physically plausible depth.
+Composition: specimen fills most of frame horizontally, centered, enough padding for app overlay controls, perspective similar to a realistic isometric 3D model. No labels inside the image.
+Style reference: premium biology app / scientific visualization, ultra-realistic, detailed, tactile, colorful but natural, not cartoon, not symbolic, not flat vector, not medical horror.
+Avoid: text, labels, UI chrome, arrows, callouts, watermark, logo, microscopic photo grain, flat illustration, simple icon style, oversaturated neon, blurry edges, fantasy objects, people, hands, instruments.

@@ -1,0 +1,10 @@
+{
+  "specimen_id": "animal",
+  "specimen_name": "Animal Cell",
+  "group": "cell",
+  "source": "/Users/codyx/Downloads/cell model 3d.glb",
+  "installed_as": "/Users/codyx/Code/med/assets/animal-tripo.glb",
+  "replaced_previous_model": "/Users/codyx/Code/med/assets/animal-tripo.failed-tripo.glb",
+  "updated_at": "2026-05-13T10:49:00+04:00",
+  "notes": "User-provided GLB installed for the animal cell after the generated Tripo animal model was rejected visually."
+}

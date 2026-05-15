@@ -1,0 +1,10 @@
+Use case: scientific-educational
+Asset type: hero specimen image for an interactive biology app canvas
+Primary request: Generate an ultra-realistic 3D neuron cell specimen matching the same premium educational biology app style as a realistic plant-cell museum model.
+Scene/backdrop: plain warm ivory studio background (#fbf7ea), no UI, no labels, no text, no watermark, no pointer cursor, no buttons.
+Subject: a single isometric 3D neuron model, viewed from slightly above at a three-quarter angle. It should be a tactile physical resin museum model with a detailed soma on the left/center, branching dendrites, and a long axon extending across the frame.
+Required biological structures: purple-pink soma with glossy nucleus, many branching dendrites with smaller branchlets, segmented myelin sheath along the axon in pearl-blue and cream bands, axon terminals with bead-like synaptic bulbs, small vesicles and microtubule strands visible inside a cutaway soma. Dense internal detail, clear depth, occlusion, and contact shadows.
+Material and realism: hyper-detailed 3D render, clay/resin museum model realism, PBR materials, subtle pores and surface texture, bevels, ambient occlusion, soft global illumination, realistic shadows, crisp edges, high-resolution, physically plausible depth.
+Composition: specimen fills most of frame horizontally, centered, enough padding for app overlay controls, perspective similar to a realistic isometric 3D model. No labels inside the image.
+Style reference: premium biology app / scientific visualization, ultra-realistic, detailed, tactile, colorful but natural, not cartoon, not symbolic, not flat vector, not medical horror.
+Avoid: text, labels, UI chrome, arrows, callouts, watermark, logo, microscopic photo grain, flat illustration, simple icon style, oversaturated neon, blurry edges, fantasy objects, people, hands, instruments.

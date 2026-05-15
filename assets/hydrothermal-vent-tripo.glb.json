@@ -1,0 +1,9 @@
+{
+  "specimen_id": "hydrothermal-vent",
+  "specimen_name": "Hydrothermal Vent",
+  "group": "origin",
+  "source": "/Users/codyx/Downloads/volcanic rock cross-section 3d model.glb",
+  "installed_as": "/Users/codyx/Code/med/assets/hydrothermal-vent-tripo.glb",
+  "updated_at": "2026-05-13T11:59:00+04:00",
+  "notes": "User-provided volcanic rock cross-section GLB installed for the hydrothermal vent life-origin specimen."
+}

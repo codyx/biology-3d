@@ -1,0 +1,11 @@
+{
+  "specimen_id": "progenote",
+  "specimen_name": "Progenote",
+  "group": "life-origin",
+  "group_id": "life-origin",
+  "source": "/Users/codyx/Downloads/progenote.glb",
+  "installed_as": "/Users/codyx/Code/med/assets/progenote-tripo.glb",
+  "replaced_previous_model": "/Users/codyx/Code/med/assets/progenote-tripo.failed-tripo.glb",
+  "updated_at": "2026-05-13T16:31:20+0400",
+  "notes": "User-provided progenote GLB installed."
+}

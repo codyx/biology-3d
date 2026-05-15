@@ -1,0 +1,10 @@
+Use case: scientific-educational
+Asset type: hero origin-of-life specimen image for an interactive biology app canvas
+Primary request: Generate an ultra-realistic 3D protocell specimen matching the same premium educational biology app style as realistic cell museum models.
+Scene/backdrop: plain warm ivory studio background (#fbf7ea), no UI, no labels, no text, no watermark, no pointer cursor, no buttons.
+Subject: a single isometric 3D protocell model, viewed from slightly above at a three-quarter angle. It should look like a tactile physical resin museum model: a primitive lipid vesicle / fatty-acid membrane bubble with a translucent amber-blue bilayer and exposed interior.
+Required structures: spherical/oval lipid bilayer membrane with visible double-layer beads, encapsulated RNA-like strands, short peptide chains, mineral grains, nucleotide-like beads, simple metabolic droplets, osmotic pores, and tiny vesicles budding from the membrane. Show primitive pre-cellular organization without modern organelles. Dense layered detail with occlusion and contact shadows.
+Material and realism: hyper-detailed 3D render, clay/resin museum model realism, PBR materials, translucent glossy membrane, subtle surface pores, bevels, ambient occlusion, soft global illumination, realistic shadows, crisp edges, high-resolution, physically plausible depth.
+Composition: specimen fills most of frame, centered, enough padding for app overlay controls, perspective similar to a realistic isometric 3D educational model. No labels inside the image.
+Style reference: premium origin-of-life scientific visualization, ultra-realistic, detailed, tactile, colorful but natural, not cartoon, not symbolic, not flat vector, not medical horror.
+Avoid: text, labels, UI chrome, arrows, callouts, watermark, logo, microscopic photo grain, flat illustration, simple icon style, oversaturated neon, blurry edges, fantasy objects, people, hands, instruments.

@@ -1,0 +1,10 @@
+Use case: scientific-educational
+Asset type: hero specimen image for an interactive biology app canvas
+Primary request: Generate an ultra-realistic 3D epithelial cell cutaway specimen matching the same premium educational biology app style as a realistic plant-cell museum model.
+Scene/backdrop: plain warm ivory studio background (#fbf7ea), no UI, no labels, no text, no watermark, no pointer cursor, no buttons.
+Subject: a single isometric 3D epithelial tissue cell model, viewed from slightly above at a three-quarter angle. It should look like a tactile resin museum model: a columnar/pink epithelial cell block with cutaway interior and surface microvilli.
+Required biological structures: tall pink columnar epithelial cell section, dense brush border microvilli on the top surface, purple nucleus near the lower/interior region, tight junction belt details along side walls, cell membrane folds, small vesicles, mitochondria, ER/Golgi folds, basement membrane base, internal cytoplasm texture. Dense layered detail with occlusion and contact shadows.
+Material and realism: hyper-detailed 3D render, clay/resin museum model realism, PBR materials, soft translucent pink tissue, subtle pores and surface texture, bevels, ambient occlusion, soft global illumination, realistic shadows, crisp edges, high-resolution, physically plausible depth.
+Composition: specimen fills most of frame, centered, enough padding for app overlay controls, perspective similar to a realistic isometric 3D model. No labels inside the image.
+Style reference: premium biology app / scientific visualization, ultra-realistic, detailed, tactile, colorful but natural, not cartoon, not symbolic, not flat vector, not medical horror.
+Avoid: text, labels, UI chrome, arrows, callouts, watermark, logo, microscopic photo grain, flat illustration, simple icon style, oversaturated neon, blurry edges, fantasy objects, people, hands, instruments.

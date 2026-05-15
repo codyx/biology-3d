@@ -1,0 +1,10 @@
+Use case: scientific-educational
+Asset type: hero origin-of-life specimen image for an interactive biology app canvas
+Primary request: Generate an ultra-realistic 3D hydrothermal vent origin-of-life infographic specimen matching the same premium educational biology app style as realistic cell museum models.
+Scene/backdrop: plain warm ivory studio background (#fbf7ea), no UI, no labels, no text, no watermark, no pointer cursor, no buttons.
+Subject: a single isometric 3D hydrothermal vent microenvironment model, viewed from slightly above at a three-quarter angle. It should look like a tactile resin museum model, not a natural landscape photo.
+Required structures: black smoker / alkaline vent chimney cross-section, mineral micropores, iron-sulfur compartments, warm orange chemical gradients, blue ocean-water channels, tiny lipid vesicles forming around mineral pores, bead-like organic molecules, proton-gradient arrows represented only as colored streams without text, porous rock texture, catalytic surface pockets. Dense layered scientific detail with occlusion and contact shadows.
+Material and realism: hyper-detailed 3D render, clay/resin museum model realism, PBR materials, rough mineral texture, glossy water channels, translucent chemical streams, bevels, ambient occlusion, soft global illumination, realistic shadows, crisp edges, high-resolution, physically plausible depth.
+Composition: specimen fills most of frame, centered, enough padding for app overlay controls, perspective similar to a realistic isometric 3D educational model. No labels inside the image.
+Style reference: premium origin-of-life scientific visualization, ultra-realistic, detailed, tactile, colorful but natural, not cartoon, not symbolic, not flat vector, not medical horror.
+Avoid: text, labels, UI chrome, arrows with text, callouts, watermark, logo, modern cells, animals, underwater scene clutter, microscopic photo grain, flat illustration, simple icon style, oversaturated neon, blurry edges, fantasy objects, people, hands, instruments.

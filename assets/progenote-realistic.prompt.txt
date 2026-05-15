@@ -1,0 +1,10 @@
+Use case: scientific-educational
+Asset type: hero origin-of-life specimen image for an interactive biology app canvas
+Primary request: Generate an ultra-realistic 3D progenote specimen matching the same premium educational biology app style as realistic cell museum models.
+Scene/backdrop: plain warm ivory studio background (#fbf7ea), no UI, no labels, no text, no watermark, no pointer cursor, no buttons.
+Subject: a single isometric 3D progenote model, viewed from slightly above at a three-quarter angle. It should look like a tactile resin museum model: a primitive transitional cell-like entity before modern genotype-phenotype coupling, more organized than a protocell but less structured than bacteria.
+Required structures: irregular translucent membrane sac, loose RNA/DNA-like strands, primitive ribosome-like granules, peptide-chain beads, early translation complexes, small metabolic droplets, mineral cofactors, membrane patches, and simple compartment-like vesicles. Show an ambiguous pre-LUCA evolutionary stage with noisy chemistry and partial organization, not a modern cell with a nucleus or organelles.
+Material and realism: hyper-detailed 3D render, clay/resin museum model realism, PBR materials, translucent glossy membrane, subtle surface pores, bevels, ambient occlusion, soft global illumination, realistic shadows, crisp edges, high-resolution, physically plausible depth.
+Composition: specimen fills most of frame, centered, enough padding for app overlay controls, perspective similar to a realistic isometric 3D educational model. No labels inside the image.
+Style reference: premium origin-of-life scientific visualization, ultra-realistic, detailed, tactile, colorful but natural, not cartoon, not symbolic, not flat vector, not medical horror.
+Avoid: text, labels, UI chrome, arrows, callouts, watermark, logo, modern nucleus, mitochondria, chloroplasts, human tissue, microscopic photo grain, flat illustration, simple icon style, oversaturated neon, blurry edges, fantasy objects, people, hands, instruments.

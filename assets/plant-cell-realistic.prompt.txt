@@ -1,0 +1,10 @@
+Use case: scientific-educational
+Asset type: hero specimen image for an interactive biology app canvas
+Primary request: Generate an ultra-realistic 3D cutaway plant cell specimen matching a premium educational science app visual, not a flat diagram.
+Scene/backdrop: plain warm ivory studio background (#fbf7ea), no UI, no labels, no text, no watermark, no pointer cursor, no buttons.
+Subject: a single isometric 3D plant cell cutaway model, viewed from slightly above at a three-quarter angle. The cell is a thick chunky green polygonal plant-cell wall with visible side depth and beveled facets. Interior is exposed like a physical museum model.
+Required biological structures: large smooth blue central vacuole, large purple nucleus with cutaway dome and darker nucleolus, green chloroplasts with stacked thylakoid ridges, orange mitochondria with inner cristae folds, coral-orange Golgi apparatus/rough ER stacks, thin tan cytoskeleton/transport filaments, many small vesicles and ribosomes in purple, pink, yellow, and blue. Structures should be dense, layered, tactile, and spatially arranged with occlusion and contact shadows.
+Material and realism: hyper-detailed 3D render, clay/resin museum model realism, PBR materials, subtle pores and surface texture, bevels, ambient occlusion, soft global illumination, realistic shadows, crisp edges, high-resolution, physically plausible depth. The cell wall should look thick and sculpted, with small side wall relief details and recessed panels.
+Composition: specimen fills most of frame, centered, enough padding for app overlay controls, perspective similar to a realistic isometric 3D model. No labels inside the image.
+Style reference: premium biology app / scientific visualization, ultra-realistic, detailed, tactile, colorful but natural, not cartoon, not symbolic, not flat vector, not medical horror.
+Avoid: text, labels, UI chrome, arrows, callouts, watermark, logo, microscopic photo grain, flat illustration, simple icon style, oversaturated neon, blurry edges, fantasy plants, people, hands, instruments.

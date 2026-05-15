@@ -1,0 +1,11 @@
+{
+  "specimen_id": "rna-world",
+  "specimen_name": "RNA World",
+  "group": "life-origin",
+  "group_id": "life-origin",
+  "source": "/Users/codyx/Downloads/beaded dna sculpture 3d model.glb",
+  "installed_as": "/Users/codyx/Code/med/assets/rna-world-tripo.glb",
+  "replaced_previous_model": "/Users/codyx/Code/med/assets/rna-world-tripo.failed-tripo.glb",
+  "updated_at": "2026-05-13T16:44:51+0400",
+  "notes": "User-provided beaded DNA sculpture GLB installed for RNA World."
+}

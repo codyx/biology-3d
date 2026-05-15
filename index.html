@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biology 3D</title>
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="./assets/favicon.svg?v=20260515"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Sans:wght@500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css?v=search-in-menu-20260515" />
+  </head>
+  <body>
+    <div class="studio-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Cell Explorer 3D home">
+          <span class="brand-orb" aria-hidden="true"></span>
+          <span>
+            <strong>Biology 3D</strong>
+            <em>Interactive biology</em>
+          </span>
+        </a>
+
+        <div class="title-block">
+          <h1 id="cellName">Plant Cell</h1>
+          <p id="cellSubtitle">Eukaryotic Cell</p>
+          <div class="tip-note">
+            <strong>Tip:</strong>
+            <span>Drag to rotate</span>
+            <span>Scroll to zoom</span>
+            <span>Ctrl + drag to pan</span>
+          </div>
+        </div>
+
+        <nav class="top-actions" aria-label="Studio navigation">
+          <div class="top-search-control">
+            <button
+              id="navSearch"
+              type="button"
+              title="Search (/)"
+              aria-label="Search specimens. Press slash to open search."
+              aria-expanded="false"
+            >
+              <span class="nav-search"></span>
+              <small>Search <kbd class="shortcut-key" aria-hidden="true">/</kbd></small>
+            </button>
+            <div class="global-search" role="search">
+              <label class="global-search-field" for="specimenSearch">
+                <span class="global-search-icon" aria-hidden="true"></span>
+                <span class="global-search-label">Search</span>
+                <input
+                  id="specimenSearch"
+                  type="search"
+                  autocomplete="off"
+                  aria-autocomplete="list"
+                  aria-controls="searchSuggestions"
+                  aria-expanded="false"
+                  placeholder="Find any specimen..."
+                />
+              </label>
+              <div
+                id="searchSuggestions"
+                class="search-suggestions"
+                role="listbox"
+                aria-label="Search suggestions"
+                hidden
+              ></div>
+            </div>
+          </div>
+          <button
+            id="navHelp"
+            type="button"
+            title="Help"
+            aria-label="Show viewer help"
+            aria-expanded="true"
+          >
+            <span class="nav-help"></span><small>Help</small>
+          </button>
+          <button
+            id="navSound"
+            type="button"
+            title="Sound"
+            aria-label="Toggle sound"
+            aria-pressed="true"
+          >
+            <span class="nav-sound"></span><small>Sound</small>
+          </button>
+          <button
+            id="navSettings"
+            type="button"
+            title="Settings"
+            aria-label="Open settings"
+            aria-expanded="false"
+          >
+            <span class="nav-gear"></span><small>Settings</small>
+          </button>
+        </nav>
+
+        <div id="settingsPanel" class="settings-panel" hidden>
+          <button type="button" data-setting="labels">
+            <span>Labels</span><b>On</b>
+          </button>
+          <button type="button" data-setting="rotate">
+            <span>Auto rotate</span><b>Off</b>
+          </button>
+          <button type="button" data-setting="reset">
+            <span>Reset view</span><b>Run</b>
+          </button>
+        </div>
+      </header>
+
+      <div class="workspace">
+        <aside class="left-sidebar" aria-label="Specimen browser">
+          <div class="specimen-dropdowns" aria-label="Specimen selectors">
+            <button
+              id="cellDropdownBtn"
+              class="specimen-dropdown"
+              type="button"
+              aria-expanded="true"
+              aria-controls="cellDropdownMenu"
+              data-dropdown-kind="cell"
+            >
+              <span>Cell Types</span>
+              <strong id="cellDropdownLabel">Plant Cell</strong>
+              <i aria-hidden="true"></i>
+            </button>
+            <nav
+              id="cellDropdownMenu"
+              class="specimen-dropdown-menu"
+              aria-label="Cell type options"
+            ></nav>
+            <button
+              id="originDropdownBtn"
+              class="specimen-dropdown"
+              type="button"
+              aria-expanded="true"
+              aria-controls="originDropdownMenu"
+              data-dropdown-kind="origin"
+            >
+              <span>Life Origin</span>
+              <strong id="originDropdownLabel">Origins</strong>
+              <i aria-hidden="true"></i>
+            </button>
+            <nav
+              id="originDropdownMenu"
+              class="specimen-dropdown-menu"
+              aria-label="Life origin options"
+            ></nav>
+          </div>
+
+          <section class="panel organelle-panel">
+            <div class="panel-heading">
+              <h2 id="featurePanelTitle">Organelles</h2>
+              <button
+                class="tiny-chevron"
+                type="button"
+                aria-label="Collapse organelles"
+              ></button>
+            </div>
+            <div id="organelleList" class="organelle-list"></div>
+          </section>
+        </aside>
+
+        <main class="stage-column">
+          <section class="stage-card" aria-live="polite">
+            <div class="view-mode" aria-label="View mode">
+              <p>View Mode</p>
+              <div class="mode-grid">
+                <button
+                  id="modeModel"
+                  type="button"
+                  class="mode-button"
+                  title="3D model"
+                  aria-label="3D model"
+                >
+                  <span class="cube-icon"></span>
+                </button>
+                <button
+                  id="modeCross"
+                  type="button"
+                  class="mode-button"
+                  title="Cross-section"
+                  aria-label="Cross-section"
+                >
+                  <span class="layers-icon"></span>
+                </button>
+                <button
+                  id="modeAnimate"
+                  type="button"
+                  class="mode-button"
+                  title="Animate"
+                  aria-label="Animate"
+                >
+                  <span class="pulse-icon"></span>
+                </button>
+              </div>
+              <label class="switch-row">
+                <span>Cross-Section</span>
+                <input id="crossToggle" type="checkbox" />
+                <i></i>
+              </label>
+            </div>
+
+            <canvas
+              id="cellCanvas"
+              width="1280"
+              height="720"
+              aria-label="Interactive biological structure viewer"
+            ></canvas>
+            <div
+              class="model-loading"
+              id="modelLoading"
+              aria-live="polite"
+              hidden
+            >
+              <div class="model-loading-card">
+                <span id="modelLoadingPercent">0%</span>
+                <strong id="modelLoadingTitle">Loading model</strong>
+                <p id="modelLoadingText">Preparing specimen geometry</p>
+                <i
+                  ><b
+                    id="modelLoadingBar"
+                    role="progressbar"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    aria-valuenow="0"
+                  ></b
+                ></i>
+              </div>
+            </div>
+            <div class="view-transition-flash" aria-hidden="true"></div>
+
+            <div class="canvas-actions" aria-label="Cell controls">
+              <button id="rotateBtn" type="button">
+                <span class="rotate-icon"></span>Rotate
+              </button>
+              <button id="zoomBtn" class="zoom-tool" type="button">
+                <span class="zoom-icon"></span>Zoom
+              </button>
+              <button id="isolateBtn" type="button">
+                <span class="target-icon"></span>Select
+              </button>
+              <button id="hideBtn" type="button">
+                <span class="eye-icon"></span>Hide Others
+              </button>
+              <button id="resetBtn" type="button">
+                <span class="reset-icon"></span>Reset View
+              </button>
+            </div>
+
+            <div class="export-actions">
+              <button id="screenshotBtn" type="button">
+                <span class="camera-icon"></span>Screenshot
+              </button>
+              <button id="exportBtn" type="button">
+                <span class="box-icon"></span>3D Export
+              </button>
+            </div>
+          </section>
+
+          <section class="bottom-grid">
+            <article class="panel microscope-panel">
+              <div class="panel-heading">
+                <h2>Microscope View</h2>
+                <span class="info-dot">i</span>
+              </div>
+              <div id="microscopeStrip" class="microscope-strip"></div>
+            </article>
+
+            <article class="panel legend-panel">
+              <div class="panel-heading">
+                <h2>Structure Legend</h2>
+                <span id="legendCount" class="info-dot">0</span>
+              </div>
+              <div id="structureLegend" class="structure-legend"></div>
+            </article>
+          </section>
+        </main>
+
+        <aside class="right-sidebar" aria-label="Organelle detail panels">
+          <section class="panel detail-panel">
+            <div class="panel-heading">
+              <h2 id="detailPanelTitle">Information</h2>
+              <button
+                id="favoriteBtn"
+                class="heart-button"
+                type="button"
+                aria-label="Favorite organelle"
+              ></button>
+            </div>
+            <div class="detail-head">
+              <div id="detailIcon" class="detail-icon"></div>
+              <div>
+                <h3 id="organelleName">Nucleus</h3>
+                <p id="organelleTagline">The command center</p>
+              </div>
+            </div>
+            <dl id="detailFacts" class="fact-list"></dl>
+            <label class="label-toggle">
+              <span>Label</span>
+              <input id="labelToggle" type="checkbox" checked />
+              <i></i>
+            </label>
+          </section>
+
+          <section class="panel notes-panel">
+            <div class="panel-heading">
+              <h2>Did You Know?</h2>
+            </div>
+            <p id="biologyNote"></p>
+            <p id="funFact" class="fun-fact"></p>
+          </section>
+
+          <section class="panel occurs-panel">
+            <div class="panel-heading">
+              <h2>Cell Habitat</h2>
+            </div>
+            <div class="occurs-body">
+              <canvas
+                id="occurCanvas"
+                width="420"
+                height="210"
+                aria-label="Occurrence diagram"
+              ></canvas>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </div>
+
+    <script src="./vendor/three.min.js"></script>
+    <script src="./vendor/GLTFLoader.js"></script>
+    <div id="appToast" class="app-toast" role="status" aria-live="polite"></div>
+
+    <script src="./script.js?v=slash-search-20260515"></script>
+  </body>
+</html>
